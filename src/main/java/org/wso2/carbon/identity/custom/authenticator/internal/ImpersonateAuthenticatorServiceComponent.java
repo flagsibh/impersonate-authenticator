@@ -4,6 +4,11 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.osgi.service.component.ComponentContext;
 import org.osgi.service.http.HttpService;
+import org.wso2.carbon.identity.application.authentication.framework.inbound.HttpIdentityRequestFactory;
+import org.wso2.carbon.identity.application.authentication.framework.inbound.HttpIdentityResponseFactory;
+import org.wso2.carbon.identity.application.mgt.AbstractInboundAuthenticatorConfig;
+import org.wso2.carbon.identity.custom.authenticator.factory.ImpersonateRequestFactory;
+import org.wso2.carbon.identity.custom.authenticator.factory.ImpersonateResponseFactory;
 import org.wso2.carbon.identity.custom.authenticator.util.ImpersonateAuthenticatorConfig;
 import org.wso2.carbon.identity.custom.authenticator.util.ImpersonateAuthenticatorServiceComponentDataHolder;
 import org.wso2.carbon.user.core.service.RealmService;
@@ -37,8 +42,16 @@ public class ImpersonateAuthenticatorServiceComponent {
 		try {
 			ImpersonateAuthenticatorConfig config = new ImpersonateAuthenticatorConfig();
 			Hashtable<String, String> dictionary = new Hashtable<>();
-			componentContext.getBundleContext().registerService(ImpersonateAuthenticatorConfig.class, config,
+			componentContext.getBundleContext().registerService(AbstractInboundAuthenticatorConfig.class, config,
 					dictionary);
+
+			componentContext.getBundleContext()
+			                .registerService(HttpIdentityRequestFactory.class.getName(),
+					                new ImpersonateRequestFactory(), null);
+
+			componentContext.getBundleContext()
+			                .registerService(HttpIdentityResponseFactory.class.getName(),
+					                new ImpersonateResponseFactory(), null);
 
 			if (log.isDebugEnabled()) {
 				log.debug("ImpersonateAuthenticator activated successfully");
