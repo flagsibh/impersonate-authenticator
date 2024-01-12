@@ -9,7 +9,7 @@
 
     <properties>
         <carbon.identity.framework.version>5.12.404</carbon.identity.framework.version>
-        <carbon.identity.basicauth.version>6.0.8</carbon.identity.basicauth.version>
+        <carbon.identity.basicauth.version>6.3.0</carbon.identity.basicauth.version>
         <user.core.version>4.4.40</user.core.version>
         <plugin.scr.version>1.7.2</plugin.scr.version>
         <plugin.bundle.version>2.4.0</plugin.bundle.version>
@@ -18,21 +18,21 @@
     </properties>
 
     <dependencies>
-        <dependency>
+<!--        <dependency>
             <groupId>org.wso2.carbon.identity.framework</groupId>
             <artifactId>org.wso2.carbon.identity.application.authentication.framework</artifactId>
             <version>${carbon.identity.framework.version}</version>
-        </dependency>
+        </dependency>-->
         <dependency>
             <groupId>org.wso2.carbon.identity.application.auth.basic</groupId>
             <artifactId>org.wso2.carbon.identity.application.authenticator.basicauth.jwt</artifactId>
             <version>${carbon.identity.basicauth.version}</version>
         </dependency>
-        <dependency>
+<!--        <dependency>
             <groupId>org.wso2.carbon.identity.framework</groupId>
             <artifactId>org.wso2.carbon.identity.core</artifactId>
             <version>${carbon.identity.framework.version}</version>
-        </dependency>
+        </dependency>-->
     </dependencies>
 
     <build>
