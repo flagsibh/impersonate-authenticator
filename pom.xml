@@ -15,24 +15,15 @@
         <plugin.bundle.version>2.4.0</plugin.bundle.version>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
+        <carbon.identity.oauth.version>5.1.3</carbon.identity.oauth.version>
     </properties>
 
     <dependencies>
-<!--        <dependency>
-            <groupId>org.wso2.carbon.identity.framework</groupId>
-            <artifactId>org.wso2.carbon.identity.application.authentication.framework</artifactId>
-            <version>${carbon.identity.framework.version}</version>
-        </dependency>-->
         <dependency>
-            <groupId>org.wso2.carbon.identity.application.auth.basic</groupId>
-            <artifactId>org.wso2.carbon.identity.application.authenticator.basicauth.jwt</artifactId>
-            <version>${carbon.identity.basicauth.version}</version>
+            <groupId>org.wso2.carbon.identity</groupId>
+            <artifactId>org.wso2.carbon.identity.oauth</artifactId>
+            <version>${carbon.identity.oauth.version}</version>
         </dependency>
-<!--        <dependency>
-            <groupId>org.wso2.carbon.identity.framework</groupId>
-            <artifactId>org.wso2.carbon.identity.core</artifactId>
-            <version>${carbon.identity.framework.version}</version>
-        </dependency>-->
     </dependencies>
 
     <build>
