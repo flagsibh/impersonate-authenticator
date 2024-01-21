@@ -1,11 +1,10 @@
-# impersonate-authenticator
+# impersonate-grant-type
 
-A implementation of a custom inbound authenticator. Compatible with WSO2 Identity Server 5.10.0.
+A implementation of a custom grant type. Compatible with WSO2 Identity Server 5.10.0.
 
 What happens here is... person A is allowed to impersonate B, if person A has a special role to impersonate others and if person B let others with the special role to impersonate him.
 
-With the WSO2 Identity Server, we can achieve this by writing a custom authenticator. We can implement by coupling to a existing authenticator or as a decoupled authenticator.
-However I have implemented this as a coupled authenticator with basic authenticator. Reason behind this was the person I want to impersonate is sent in a query parameter (`?impersonatee=userb`).
+With the WSO2 Identity Server, we can achieve this by writing a custom grant type. 
 
 ## Implementation
 
@@ -29,3 +28,10 @@ Since I am coupling impersonation authentication with basic authenticator, I hav
     > Parameters should be adjusted to meet the current application requirements.   
 
 2. as
+
+
+[Writing a Custom OAuth 2.0 Grant Type](https://is.docs.wso2.com/en/5.11.0/learn/writing-a-custom-oauth-2.0-grant-type/#implementing-a-new-grant-type)
+
+https://github.com/wso2/samples-is/tree/master/oauth2/custom-grant
+
+https://github.com/wso2/samples-is/tree/master/oauth2/custom-token-issuer
