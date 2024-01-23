@@ -38,8 +38,6 @@ To deploy the authenticator, copy the generated JAR to the IS, in the path `$IS_
 
 Also, we need to modify the login page so that text boxes and buttons correctly show up when using this new custom authenticator. In order to do so, we need to edit the `login.jsp` file.
 
-Because Consum already has a customized `login.jsp` file in the repository [personalizacion-pantallas](https://desgitlab.consum.es/webConsum/iam/personalizacion-pantallas.git), we should be modifying the file `authenticationendpoint/pages/login.jsp` and then follow the instructions in the `README` to deploy the modifications to the IS.  
-
 1. Create a new constant `IMPERSONATE_AUTHENTICATOR`:
    ```java
     private static final String FIDO_AUTHENTICATOR = "FIDOAuthenticator";
